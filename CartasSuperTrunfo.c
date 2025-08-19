@@ -6,6 +6,22 @@
 // Siga os comentários para implementar cada parte do desafio.
 //Teste larissa
 
+float calcula_densidade_populacional(float populacao, float area){
+    float densidade = 0;
+    densidade = populacao / area;
+    return densidade;
+};
+
+double calcula_pib_percapita(float pib, int populacao){
+    double pib_percapita = 0;
+    /**
+     * O PIB  é informado em bilhoes de reais
+     * O PIB per capita deve ser mostrado em reais
+     *  */
+    pib_percapita = (double) (pib / populacao) * 1000000000; 
+    return pib_percapita;
+};
+
 int main() {
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
@@ -25,6 +41,8 @@ int main() {
     float Carta1_Area;
     float Carta1_PIB;
     int Carta1_Numero_de_pontos_turisticos;
+    float Carta1_densidade_populacional = 0;
+    double Carta1_pib_percapita = 0;
 
     // carta 2
     char Carta2_Estado;
@@ -34,6 +52,8 @@ int main() {
     float Carta2_Area;
     float Carta2_PIB;
     int Carta2_Numero_de_pontos_turisticos;
+    float Carta2_densidade_populacional = 0;
+    double Carta2_pib_percapita = 0;
 
     // Entrada de dados da carta 1
     printf("Digite os dados da carta1\n");
@@ -78,6 +98,10 @@ int main() {
     printf("Área: %.2f km²\n", Carta1_Area);
     printf("PIB: %.2f bilhões de reais\n", Carta1_PIB);
     printf("Número de Pontos Turísticos: %d\n", Carta1_Numero_de_pontos_turisticos);
+    Carta1_densidade_populacional = calcula_densidade_populacional(Carta1_Populacao, Carta1_Area);
+    printf("Densidade Populacional: %.2f hab/km²\n", Carta1_densidade_populacional);
+    Carta1_pib_percapita = calcula_pib_percapita(Carta1_PIB, Carta1_Populacao);
+    printf("PIB per capita: %.2f reais\n", Carta1_pib_percapita);
 
     // Saída de dados da carta 2
     printf("\nCarta 2:\n");
@@ -88,6 +112,10 @@ int main() {
     printf("Área: %.2f km²\n", Carta2_Area);
     printf("PIB: %.2f bilhões de reais\n", Carta2_PIB);
     printf("Número de Pontos Turísticos: %d\n", Carta2_Numero_de_pontos_turisticos);
+    Carta2_densidade_populacional = calcula_densidade_populacional(Carta2_Populacao, Carta2_Area);
+    printf("Densidade Populacional: %.2f hab/km²\n", Carta2_densidade_populacional);
+    Carta2_pib_percapita = calcula_pib_percapita(Carta2_PIB, Carta2_Populacao);
+    printf("PIB per capita: %.2f reais\n", Carta2_pib_percapita);
     
     return 0;
 }
